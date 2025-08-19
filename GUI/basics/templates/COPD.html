@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+{% block content %}
+<head>
+    <ul class="nav nav-pills">
+        {% csrf_token %} 
+        <li class="nav-item">
+          <a href="{% url 'logout' %}" class="btn btn-primary">LogOut </a>
+        </li>
+    
+    </ul>
+    <style type="text/css">
+        body{
+            background-image: url('https://img.freepik.com/free-vector/abstract-light-blue-wave-background_1055-3072.jpg?t=st=1734770619~exp=1734774219~hmac=e2053ce940e4e433619d944c6fc12c3caabbdda7e234d0ab195c6cfb41f3c917&w=740');
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COPD Prediction</title>
+</head>
+<body>
+    <marquee>
+        <pre><h1 style=color:red>Welcome to RRIT   Final Year Project On COPD Detection Using ML And Django</h1></pre>
+    </marquee>
+    <h1 align="center">COPD Prediction</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td>
+                    Enter the Age:
+                </td>
+                <td>
+                    <input type="text" name="textfirstnumber">
+                </td><br>
+                <br>
+                <br>
+                <td>
+                    Enter the PackHistory:
+                </td>
+                <td>
+                    <input type="text" name="texttwonumber">
+                </td>
+                <td>
+                    Enter the FEV1PRED:
+                </td>
+                <td>
+                    <input type="text" name="textthirdnumber">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the FVC:
+                </td>
+                <td>
+                    <input type="text" name="textfourthnumber">
+                </td>
+                <td>
+                    Enter the FVCPRED:
+                </td>
+                <td>
+                    <input type="text" name="textfivenumber">
+                </td>
+                <td>
+                    Enter the CAT:
+                </td>
+                <td>
+                    <input type="text" name="textsixnumber">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the HAD:
+                </td>
+                <td>
+                    <input type="text" name="textsevennumber">
+                </td>
+                <td>
+                    Enter the SGRQ:
+                </td>
+                <td>
+                    <input type="text" name="texteightnumber">
+                </td>
+                <td>
+                    Enter the AGEquartiles:
+                </td>
+                <td>
+                    <input type="text" name="textninenumber">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the copd:
+                </td>
+                <td>
+                    <input type="text" name="texttennumber">
+                </td>
+                <td>
+                    Enter the Gender:
+                </td>
+                <td>
+                    <input type="text" name="textelvennumber">
+                </td>
+                <td>
+                    Enter the Smoking:
+                </td>
+                <td>
+                    <input type="text" name="texttwelvenumber">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the Diabetes:
+                </td>
+                <td>
+                    <input type="text" name="textthirteennumber">
+                </td>
+                <td>
+                    Enter the Muscular:
+                </td>
+                <td>
+                    <input type="text" name="textfourteennumber">
+                </td>
+                <td>
+                    Enter the Hypertension:
+                </td>
+                <td>
+                    <input type="text" name="textfifteenhnumber">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter the AtrialFib:
+                </td>
+                <td>
+                    <input type="text" name="textsixteennumber">
+                </td>
+                <td>
+                    Enter the IHD:
+                </td>
+                <td>
+                    <input type="text" name="textseventeennumber">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit" name="buttonsubmitsvm" class="btn btn-primary">SVM Prediction</button>
+                </td>
+                <td colspan="2">
+                    <button type="submit" name="buttonsubmitknn" class="btn btn-primary">KNN Prediction</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ result }}
+            
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ acc }}
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>
+{% endblock %}
